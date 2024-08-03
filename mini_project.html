@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        .myStyle {
+          background-color: rgb(49, 43, 43);
+          color: white;          
+        }
+        .myStyle1 {
+          background-color: rgb(14, 14, 14);
+          color: white;          
+        }
+        </style>
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav>
-        <div class="main-nav container flex">
+<body class = "body">
+    <nav  id="navbaaar">
+        <div class="main-nav container flex ">
             <a href="#" onclick="reload()" class="company-logo">
                 <img src="news.png" alt="company logo">
             </a>
@@ -22,17 +33,18 @@
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
                 </ul>
             </div>
-            <div class="search-bar flex">
+            <div class="search-bar flex mx-3">
                 <input  id="search-text" type="text" class="news-input" placeholder="e.g.Technology">
                 <button id="search-button"  class="search-button">Search</button>
+                <!-- <button type="button" id="darkbutton" class="btn btn-dark mx-1">Dark</button> -->
+                <button class="btn btn-dark" style="height: 40px;font-size: 13px;" onclick=myFunction()>Change Theme</button>
             </div>
         </div>
     </nav>
 
 
-    <main>
+    <main class id="cards">
 <div class="cards-container container flex" id="cards-container">
-
     </div>
     </main>
 
@@ -40,7 +52,7 @@
         <div class="card">
             <div class="card-header">
                 <img src="card.jpg" alt="news-image" id="news-img"></div>
-                <div class="ard-content">
+                <div class="card-content">
                     <h3 id="news-title">This is the Title</h3>
                     <h6 class="news-source" id="news-source">End Gadget 25/08/24</h6>
                     <p class="news-desc" id="news-desc">gdgeufgioehig whfiohwe ihwhowopf ijwoowolkp</p>
@@ -48,5 +60,20 @@
             </div>
     </template>
     <script src="script.js"></script>
+    <script>
+        function myFunction() {
+          const list = document.getElementById("navbaaar").classList;
+          const list1 = document.getElementById("cards").classList;
+          const list2 = document.getElementById("cards-container").classList;
+          list.toggle("myStyle1");
+          list1.toggle("myStyle");
+          list2.toggle("myStyle");
+        }
+        </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
